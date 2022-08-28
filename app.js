@@ -14,7 +14,9 @@ function initUI() {
     // save to localStorage
     localStorage.setItem("booking.customer", JSON.stringify(formData));
 
-    const customerName = JSON.parse(localStorage.getItem("booking.customer")).name;
+    const customerName = JSON.parse(
+      localStorage.getItem("booking.customer")
+    ).name;
 
     const bookingBtn = document.querySelector(".booking-btn");
     bookingBtn.textContent = "Saving...";
@@ -22,11 +24,11 @@ function initUI() {
     setTimeout(() => {
       const checkoutContainer = document.querySelector(".checkout-container");
       checkoutContainer.innerHTML = `
-        <div class="complete-state text-center border rounded  px-4 py-3">
+        <div class="complete-state text-center border rounded mt-5 px-4 py-3">
           <i class="bi bi-check-circle-fill fs-1"></i>
           <h2 class="mt-3">Thank you , ${customerName}!</h2>
           <p class="mt-3">
-            Finish your Booking! Will contact you soon.
+            We've saved your order details! Will contact you soon.
           </p>
           <div class="d-flex justify-content-center mt-4">
             <button class="btn btn-dark">Continue</button>
@@ -43,25 +45,7 @@ function initUI() {
       formComfirm.style.display = "none";
     }
   });
-  const signForm = document.querySelector(".sign-form");
-
-  signForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const formData = Object.fromEntries(new FormData(form).entries());
-    // save to localStorage
-    localStorage.setItem("sign.customer", JSON.stringify(formData));
-
-    const customerName = JSON.parse(
-      localStorage.getItem("sign.customer")
-    ).name;
-
-    const signBtn = document.querySelector(".log-btn");
-    signBtn.textContent = "Saving...";
-
-    
-  });
   
-
 }
 
 function handleAddToCart(event) {
@@ -108,7 +92,7 @@ function addItemToUI(title, price, img) {
   toast.show();
   const offcanvas = new bootstrap.Offcanvas("#cart-sidebar");
   offcanvas.show();
-  
+
   cartRow.querySelector(".card-remove").addEventListener("click", removeItem);
   cartRow
     .querySelector(".card-quantity-input")
