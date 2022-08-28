@@ -1,0 +1,43 @@
+.image {
+  background-image: url(images/pexels-pixabay-271618.jpg);
+}
+.form input {
+  width: 400px;
+  height: 50px;
+}
+#select {
+  width: 250px;
+  height: 50px;
+}
+.images{
+  height: 300px;
+}
+.images:hover {
+  scale: 1.01;
+}
+.booking {
+  overflow: hidden;
+  max-width: 25rem;
+}
+#cart-sidebar {
+  width: 45rem;
+}
+.hotel-image {
+  height: 20rem;
+  object-fit: cover;
+  transition: scale 300ms;
+}
+.hotel-image:hover {
+  scale: 1.01;
+}
+.card-quantity-input {
+  padding: 0.2em 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+}
+.sign-form{
+  display: none;
+  cursor: pointer;
+  
+}
